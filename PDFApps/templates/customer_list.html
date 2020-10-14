@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product_name</th>
+      <th scope="col">quality</th>
+      <th scope="col">price</th>
+      <th scope="col">Sale_Date</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for customer in customers %}
+    <tr>
+        <th>{{ customer.id }}</th>
+         <th> {{ customer.Product_name}}</th>
+         <th> {{ customer.quality}}</th>
+         <th> {{ customer.price}}</th>
+         <th> {{ customer.Sale_Date}}</th>
+         <th>
+             <a href="{% url 'pdf_view' customer.pk %}">PDF </a>
+         </th>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock content %}

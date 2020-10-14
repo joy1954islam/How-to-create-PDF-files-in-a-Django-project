@@ -1,0 +1,49 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<th colspan="center">Product Name :  {{ customer.Product_name }}</th><br>
+<hr>
+<th>Product Description : {{ customer.description }}</th>
+<hr>
+<table class="table table-hover table-light">
+  <thead>
+    <tr>
+      <th scope="col">quality</th>
+      <th scope="col">price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+
+         <th> {{ customer.quality}}</th>
+         <th> {{ customer.price}}</th>
+    </tr>
+  </tbody>
+    <thead>
+
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Total Price </th>
+    </tr>
+  </thead>
+    <tbody>
+    <tr>
+         <th></th>
+        <th> {{ customer.total_price}}</th>
+    </tr>
+  </tbody>
+</table>
+
+
+<th>Product Sales Date :  {{ customer.Sale_Date }}</th>
+<br>
+<br>
+<br>
+<!--<img src="" height="200px">-->
+<img src="{{ customer.logo.path }}" class="img-fluid" alt="Responsive image" height="200px">
+</body>
+</html>
